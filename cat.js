@@ -1,8 +1,11 @@
 module.exports = function(args) {
   const { readFile } = require('fs');
+  
+  
 
-readFile('./pwd.js', (err, data) => {
+readFile('./'+ args + '.js', 'utf8', (err, data) => {
   if (err) throw err;
-  console.log(data);
+   process.stdout.write(data)
+   process.stdout.write('prompt > ');
 });
 }
